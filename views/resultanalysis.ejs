@@ -1,0 +1,2052 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Results</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway:500|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+<body >
+	
+<div class="container">
+
+
+  <div class="row pink">
+  <div class="headings"><b>List of Subject Toppers 2017-18 BCA 1st Year</b></div>
+  </div>
+  <div class="row pink">
+  <div class="headings"><b>Analysis of Total Marks Obtained By Students</b></div>
+  </div>
+<!-- row 1 -->
+
+<div class="row pink">
+<div class="headings"><b>Analysis of Computer Fundamental External Marks </b></div>
+<canvas id="cf-ese" ></canvas>	
+<div class="headings"><b>Analysis of Computer Fundamental Internal Marks </b></div>
+<canvas id="cf-cia"></canvas>	
+
+</div>
+
+<!-- row 2 -->
+
+<div class="row pink">
+<div class="headings"><b>Analysis For Digital Electronics</b></div>
+<canvas id="de-ese" ></canvas>	
+
+<canvas id="de-cia"></canvas>	
+
+</div>	
+
+<!-- row 3 -->
+<div class="row pink">
+<div class="headings"><b>Analysis For Programming Concepts Using C</b></div>
+<canvas id="pcuc-ese" ></canvas>	
+
+<canvas id="pcuc-cia"></canvas>	
+</div>
+
+
+
+<!-- row 4 -->
+<div class="row pink">
+<div class="headings"><b>Analysis For Maths 1</b></div>
+<canvas id="maths1-ese" ></canvas>	
+<div >
+<canvas id="maths1-cia"></canvas>	
+</div>
+</div>	
+
+
+<!-- row 5-->
+<div class="row pink">
+<div class="headings"><b>Analysis For Professional Communication </b></div>
+<canvas id="pc-ese" ></canvas>
+<div >
+<canvas id="pc-cia"></canvas>	
+</div>	
+</div>	
+
+<!-- row 6 -->
+
+<div class="row pink">
+<div class="headings"><b>Analysis For Data Sructures Using C</b></div>
+<canvas id="ds-ese" ></canvas>		
+<div>
+<canvas id="ds-cia"></canvas>	
+</div>
+</div>
+
+<!-- row 7 -->
+
+<div class="row pink">
+<div class="headings"><b>Analysis For Operating Systems </b></div>
+<canvas id="os-ese" ></canvas>	
+<div>
+<canvas id="os-cia"></canvas>	
+</div>
+</div>	
+
+<!-- row 8 -->
+<div class="row pink">
+<div class="headings"><b>Analysis For System Analysis And Design</b></div>
+<canvas id="sad-ese" ></canvas>	
+<div >
+<canvas id="sad-cia"></canvas>	
+</div>
+</div>	
+
+
+<!-- row 9 -->
+<div class="row pink">
+<div class="headings"><b>Analysis For Maths 2</b</div>
+<canvas id="maths2-ese" ></canvas>	
+<div >
+<canvas id="maths2-cia"></canvas>	
+</div>
+</div>	
+
+
+<!-- row 10 -->
+<div class="row pink">
+<div class="headings"><b>Analysis For Computer ORganization And Architecture</b> </div>
+<canvas id="coa-ese" ></canvas>
+<div >
+<canvas id="coa-cia"></canvas>	
+</div>	
+</div>	
+
+
+
+
+</div> <!-- //end of container  -->
+
+</body>
+<!-- javascript starts here  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+new Chart(document.getElementById("cf-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x: 7,
+            y: 18,
+            r: 7
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  47,
+            y: 20,
+            r:  47
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 146,
+            y: 30,
+            r: 146
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x: 93, 
+            y: 40,
+            r: 93
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 5,
+            y: 50,
+            r: 5
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 0,
+            y: 60,
+            r: 0
+          }]
+        },
+
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Fundamental External Exams (Out OF 60)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 180,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // CF Internal  analysis
+ new Chart(document.getElementById("cf-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 18,
+            y: 30,
+            r: 18
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  82, 
+            y: 40,
+            r:  82
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  118,
+            y: 50,
+            r:  118
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:   82 ,
+            y: 60,
+            r:  82 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Fundamental Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 150,
+                min: 0,
+                stepSize:10
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+// ##############################################################
+
+
+new Chart(document.getElementById("de-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:  24,
+            y: 10,
+            r:  24
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 51,
+            y: 20,
+            r: 51
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 73,
+            y: 30,
+            r: 73
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x: 76, 
+            y: 40,
+            r: 76
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 66,
+            y: 50,
+            r: 66
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 10,
+            y: 60,
+            r: 10
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Digital Electronics  External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // de cia analysis
+ new Chart(document.getElementById("de-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 19,
+            y: 30,
+            r: 19
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  66, 
+            y: 40,
+            r:  66
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  137,
+            y: 50,
+            r:  137
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:   78 ,
+            y: 60,
+            r:  78 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Digital Electronics Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 160,
+                min: 0,
+                stepSize:10
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+
+// ##############################################################
+
+
+new Chart(document.getElementById("pcuc-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:   53,
+            y: 10,
+            r: 53
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:    76,
+            y: 20,
+            r:    76
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  95,
+            y: 30,
+            r:  95
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  39, 
+            y: 40,
+            r:  39
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 20 ,
+            y: 50,
+            r: 20
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:   13 ,
+            y: 60,
+            r: 13
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Programming Concepts Using C External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // ############## pcuc internal analysis #################################
+
+
+ new Chart(document.getElementById("pcuc-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  22 ,
+            y: 30,
+            r:  22 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    59 , 
+            y: 40,
+            r:    59 
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  181 ,
+            y: 50,
+            r: 181 
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:    38 ,
+            y: 60,
+            r:   38 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Programming Concepts Using C Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+
+// ##############################################################
+// maths 1 external
+
+new Chart(document.getElementById("maths1-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:   40 ,
+            y: 10,
+            r:  40 
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  89,
+            y: 20,
+            r:  89
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  79,
+            y: 30,
+            r:  79
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:   39, 
+            y: 40,
+            r:  39
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:   30 ,
+            y: 50,
+            r:   30
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  23 ,
+            y: 60,
+            r: 23
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Maths 1 External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // maths1 cia analysis
+
+
+ new Chart(document.getElementById("maths1-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  20 ,
+            y: 30,
+            r:  20 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    53 , 
+            y: 40,
+            r:    53
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  169  ,
+            y: 50,
+            r: 169  
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 58 ,
+            y:60,
+            r:58 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Maths 1 Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+ // / ##############################################################
+// pc external
+
+new Chart(document.getElementById("pc-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:   18,
+            y: 10,
+            r:  18 
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  39,
+            y: 20,
+            r:  39
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  69,
+            y: 30,
+            r:  69
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    79, 
+            y: 40,
+            r:   79
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:    71 ,
+            y: 50,
+            r:    71
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  23 ,
+            y: 60,
+            r:  23
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'PC External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // pc cia analysis
+
+
+ new Chart(document.getElementById("pc-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:   5 ,
+            y: 30,
+            r:   5 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  41 , 
+            y: 40,
+            r:  41
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:   157 ,
+            y: 50,
+            r:   157  
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  97 ,
+            y:60,
+            r: 97 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Pc Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // ___________2nd Sem____________
+
+
+ new Chart(document.getElementById("ds-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x: 18,
+            y: 18,
+            r: 18
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  45,
+            y: 20,
+            r:  45
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 71,
+            y: 30,
+            r: 71
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x: 93, 
+            y: 40,
+            r: 93
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 61,
+            y: 50,
+            r: 61
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 21,
+            y: 60,
+            r: 21
+          }]
+        },
+
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Data Structure Using C External Exams (Out OF 60)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 180,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // ds Internal  analysis
+ new Chart(document.getElementById("ds-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 47,
+            y: 30,
+            r: 47
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  123, 
+            y: 40,
+            r:  123
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  94,
+            y: 50,
+            r:  94
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:36,
+            y: 60,
+            r:  36 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Data Structure Using C Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 150,
+                min: 0,
+                stepSize:10
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+// ##############################################################
+
+
+new Chart(document.getElementById("os-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:  12,
+            y: 10,
+            r:  12
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 94,
+            y: 20,
+            r: 94
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 115,
+            y: 30,
+            r: 115
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x: 52, 
+            y: 40,
+            r: 52
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 26,
+            y: 50,
+            r: 26
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 1,
+            y: 60,
+            r: 1
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Operating System  External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // os  internal cia analysis
+ new Chart(document.getElementById("os-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 50,
+            y: 30,
+            r: 50
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  143, 
+            y: 40,
+            r:  143
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  83,
+            y: 50,
+            r:83
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  24 ,
+            y: 60,
+            r:  24 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Operating System Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 160,
+                min: 0,
+                stepSize:10
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+
+// ##############################################################
+
+
+new Chart(document.getElementById("sad-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:  48,
+            y: 10,
+            r: 48
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  62,
+            y: 20,
+            r:62
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x: 116,
+            y: 30,
+            r:116
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  68, 
+            y: 40,
+            r:  68
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x: 6 ,
+            y: 50,
+            r: 6
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  0 ,
+            y: 60,
+            r: 0
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'System Analysis & Design External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // ############## sad internal analysis #################################
+
+
+ new Chart(document.getElementById("sad-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  59 ,
+            y: 30,
+            r:  59 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    116 , 
+            y: 40,
+            r:116
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  90 ,
+            y: 50,
+            r: 90 
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:   35 ,
+            y: 60,
+            r:   35 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'System Analysis & Design Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+
+// ##############################################################
+// maths 2 external
+
+new Chart(document.getElementById("maths2-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:   40 ,
+            y: 10,
+            r:  40 
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  89,
+            y: 20,
+            r:  89
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  79,
+            y: 30,
+            r:  79
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:   39, 
+            y: 40,
+            r:  39
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:   30 ,
+            y: 50,
+            r:   30
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  23 ,
+            y: 60,
+            r: 23
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'maths 2 External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // maths2 cia analysis
+
+
+ new Chart(document.getElementById("maths2-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  20 ,
+            y: 30,
+            r:  20 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    53 , 
+            y: 40,
+            r:    53
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:  169  ,
+            y: 50,
+            r: 169  
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x: 58 ,
+            y:60,
+            r:58 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'maths 2 Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+
+ // / ##############################################################
+// coa external
+
+new Chart(document.getElementById("coa-ese"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+        {
+          label: ["<18"],
+          backgroundColor: "rgb(255, 56, 56,0.5)",
+          borderColor: "rgb(255, 56, 56,1)",
+          data: [{
+            x:   18,
+            y: 10,
+            r:  18 
+          }]
+        }, {
+          label: ["18-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x:  39,
+            y: 20,
+            r:  39
+          }]
+        }, {
+          label: ["21-30"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:  69,
+            y: 30,
+            r:  69
+          }]
+        }, {
+          label: ["31-40"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:    79, 
+            y: 40,
+            r:   79
+          }]
+        },
+        {
+          label: ["41-50"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:    71 ,
+            y: 50,
+            r:    71
+          }]
+        },
+        {
+          label: ["51-60"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  23 ,
+            y: 60,
+            r:  23
+          }]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Organization & Architecture External Exams'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 60,
+                min: 0,
+                stepSize:9
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 120,
+                min: 0,
+                stepSize:5
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ // pc cia analysis
+
+
+ new Chart(document.getElementById("coa-cia"), {
+    type: 'bubble',
+    data: {
+      labels: "analysis",
+      datasets: [
+  
+        {
+          label: ["10-20"],
+          backgroundColor: "rgb(24, 44, 97,0.5)",
+          borderColor: "rgb(24, 44, 97,1)",
+          data: [{
+            x: 0,
+            y: 20,
+            r: 0
+          }]
+        }, {
+          label: ["21-25"],
+          backgroundColor: "rgb(234, 181, 67,0.5)",
+          borderColor: "rgb(234, 181, 67,1)",
+          data: [{
+            x:   5 ,
+            y: 30,
+            r:   5 
+          }]
+        }, {
+          label: ["26-30"],
+          backgroundColor: "rgb(88, 177, 159,0.5)",
+          borderColor: "rgb(88, 177, 159,1)",
+          data: [{
+            x:  41 , 
+            y: 40,
+            r:  41
+          }]
+        },
+        {
+          label: ["31-35"],
+          backgroundColor: "rgb(190, 46, 221,0.5)",
+          borderColor: "rgb(190, 46, 221,1)",
+          data: [{
+            x:   157 ,
+            y: 50,
+            r:   157  
+          }]
+        },
+        {
+          label: ["36-40"],
+          backgroundColor: "rgb(44, 58, 71,0.5)",
+          borderColor: "rgb(44, 58, 71,1)",
+          data: [{
+            x:  97 ,
+            y:60,
+            r: 97 
+          }]
+        },
+  
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Organization & Architecture Internal Exams (Out Of 40)'
+      }, scales: {
+        yAxes: [{
+        ticks: {
+                max: 70,
+                // min: 0,
+                stepSize:10
+                
+            }, 
+          scaleLabel: {
+            display: true,
+            labelString: "Range Of Marks"
+          }
+        }],
+        xAxes: [{
+         ticks: {
+                max: 220,
+                min: 0,
+                stepSize:20
+                
+            },  
+          scaleLabel: {
+            display: true,
+            labelString: "Number Of Students"
+          }
+        }]
+      }
+    }
+});
+ 
+ 
+
+
+}; //window on load function ends here 
+
+
+</script>
+</html>

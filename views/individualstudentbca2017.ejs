@@ -1,0 +1,819 @@
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title> Results </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:500|Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css" type="text/css" />
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+      <body >
+        <!--body starts here-->
+
+        <div class="container ">
+       
+       
+      <!--bootstrap jumbotron-->
+        <div class="jumbotron">
+         <h1>Hello,</h1>
+         <h2><%= name %></h2>
+         
+         <!--First Quote-->
+
+         <% if (obt_marks>1500){%>
+        <blockquote>
+          <p><q> I failed in some subjects in exam, but my friend passed in all. Now he is an engineer at Microsoft and I am the owner of Microsoft. </q></p>
+        <footer>Bill Gates</footer>
+        </blockquote>
+         <% } %>
+               <!-- Second  quote-->
+        <% if (obt_marks>1400 &&  obt_marks <=1500){%>
+        <blockquote>
+          <p><q>I told my son: You don’t need to be in the top three in your class, being in the middle is fine, so long as your grades aren’t too bad. Only this kind of person [a middle-of-the-road student] has enough free time to learn other skills.</q></p>
+        <footer>Jack Ma</footer>
+        </blockquote>
+         <% } %>
+         
+          <!--third   quote-->
+        <% if (obt_marks >1300 && obt_marks <=1400){%>
+        <blockquote>
+          <p><q>Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential.</q></p>
+        <footer>John Maxwell</footer>
+        </blockquote>
+         <% } %>
+         
+       
+         
+        <% if (obt_marks >1200 && obt_marks <=1300){%>
+        <blockquote>
+          <p><q> Failure is the opportunity to begin again more intelligently.</q></p>
+        <footer>Henry Ford</footer>
+        </blockquote>
+         <% } %>
+      
+        <% if (obt_marks >1100 && obt_marks <=1200){%>
+        <blockquote>
+          <p><q>Success consists of going from failure to failure without loss of enthusiasm.</q></p>
+        <footer> Winston Churchill </footer>
+        </blockquote>
+         <% } %>
+         
+         
+              <% if (obt_marks <=1100 ){%>
+        <blockquote>
+          <p><q> If you're not failing, then you're either not doing enough, and/or you're not challenging yourself enough.</q></p>
+        <footer>Michael Jordan </footer>
+        </blockquote>
+         <% } %>
+         
+         
+         
+              <!--Row for student details -->
+      <div >
+   
+       <div class="stud-details"> <span class="stud-info"> Name :</span> <%= name%></div>
+       <div class="stud-details "> <span class="stud-info"> Roll No :</span> <%=university_roll_number%> </div>
+       <div class="stud-details  "> <span class="stud-info"> Status :</span> <%= status%> </div>
+       <div class="stud-details  "> <span class="stud-info"> Father Name :</span> <%= father_name%> </div>
+       <div class="stud-details  "> <span class="stud-info"> Mother Name :</span> <%= mother_name%> </div>
+       <div class="stud-details  "> <span class="stud-info"> 	Branch:</span> <%=branch%> </div>
+
+      </div>
+      <!-- end of Student details  -->
+        
+         
+       </div>  <!--// jumbotronends here -->
+   
+       
+      <!--end of jubotron -->
+
+      <!--starting of grids-->
+
+
+
+
+     <!--<div class="row "></div>-->
+
+      <!--Row for information of rank and rank and sgpa -->
+      <div class="row pink ">
+      <h1> <b> <div class="headings">Rank And SGPA Charts</div> </b></h1>
+      <div class="col-lg-6 col-md-6 col-sm-6 pink "><canvas id="rank-chart" width="800" height="450"></canvas> </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 pink "><canvas id="sgpa-chart" width="800" height="450"></canvas> </div>
+      </div>
+
+
+      <!--Total year ans Sem marks   -->
+
+      <div class="row pink">
+           <h1> <b>  <div class="headings">Total Marks Details (First Semester,Second Semester,First Year)</div></b></h1>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "> <canvas id="first-year-total"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "> <canvas id="second-sem-total"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "> <canvas id="first-sem-total"></canvas></div>
+      </div>
+
+      <!--Row for horizontal bar graph ese both sem  marks -->
+      <div class="row pink">
+      <div class="col-lg-12 col-md-12">
+      <b> <div class="headings">External Exams (Sem1 & Sem2) /60 </div> </b>
+      <canvas id="ese-year" ></canvas> </div>
+      </div>
+      <!--Row for horizontal  bar graphy internal both sem marks -->
+      <div class="row pink">
+      <div class="col-lg-12 col-md-12">
+         <b>  <div class="headings">Internal Exams (Sem1 & Sem2) /40 </div> </b>
+      <canvas id="cia-year" ></canvas></div>
+      </div>
+       
+        
+
+      
+
+       <!-- row  1 for subject marks  -->
+      <div class="row pink">
+     <h1> <b>  <div class="headings">First Semester Total Marks( /100) </div> </b></h1>
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">CF </div> </b><canvas id="cf"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">DE </div> </b><canvas id="de"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">PCUC</div> </b><canvas id="pcuc"></canvas></div>
+      </div>
+
+
+             <!-- row for subject marks  -->
+      <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">Maths1</div> </b><canvas id="maths1"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">PC</div> </b><canvas id="pc"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">PCUC Lab</div> </b><canvas id="pcuc_lab"></canvas></div>
+      </div>
+
+
+             <!-- row for subject marks  -->
+      <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">DE Lab</div> </b><canvas id="de_lab"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "> <b><div class="headings">STP SEM 1</div> </b><canvas id="stp_sem1"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">GP SEM 1</div> </b><canvas id="gp_sem1"></canvas></div>
+      </div>
+
+
+  
+
+             <!-- row for subjct marks  -->
+      <div class="row pink ">
+       <h1> <b>  <div class="headings">Second Semester Total Marks( /100) </div> </b></h1>
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">DSUS</div> </b><canvas id="ds"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">OS</div> </b><canvas id="os"></canvas></div>
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">SAD</div> </b><canvas id="sad"></canvas></div>
+      </div>
+             <!-- row for subject marks  -->
+      <div class="row">
+     
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">MATHS2</div> </b><canvas id="maths2"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">COA</div> </b><canvas id="coa"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">COA Lab</div> </b><canvas id="coa_lab"></canvas></div>
+      </div>
+
+
+             <!-- row for subjct marks  -->
+      <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">DS Lab</div> </b><canvas id="ds_lab"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">STP SEM2</div> </b> <canvas id="stp_sem2"></canvas></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 pink "><b><div class="headings">GP SEM2</div> </b><canvas id="gp_sem2"></canvas></div>
+      </div>
+  
+  
+      <!-- row for carry overpapaer details -->
+      <div class="row ">
+      <div class="col-lg-6 col-md-6 col-sm-6 pink ">
+
+      <div class="stud-info">First Semester </div>
+      <div class="stud-details "> <span class="stud-info"> Credit Theory:</span> <%=credit_theory_2_obt %> /20</div>
+      <div class="stud-details "> <span class="stud-info">Credit Practical:</span> <%=credit_pratical_1_obt%> /6</div> 
+
+      <div class="stud-info">Second Semester </div>
+      <div class="stud-details "> <span class="stud-info"> Credit Theory:</span> <%= credit_theory_2_obt%> /20</div>
+      <div class="stud-details "> <span class="stud-info">Credit Practical:</span> <%=  credit_pratical_2_obt%> /6</div>
+       </div>  <!-- End of Credit column -->
+      <div class="col-lg-6 col-md-6 col-sm-6 pink">
+      	<div class="stud-details  "> <span class="stud-info">Carry Over Paper(s) : <%=carry_over_paper%> <div>Details:</div><div><%=carry_over_paper_details%></div> </span>
+      
+      
+      	</div>
+      
+      </div>  <!-- end of Carry Over Paper Detials Column -->
+
+
+    </div>
+
+
+      <!--js to b loaded-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script  type="text/javascript" src="chartjsconfig.js"></script>  
+
+        
+        
+        
+        
+        
+        
+        <!--body Ends  here-->
+        
+<!--#########################      java Script starts Here    ######################################3-->
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!--chart configuration --> 
+  <script>
+
+
+
+window.onload = function() {
+
+    
+new Chart(document.getElementById("rank-chart"), {
+  type: 'line',
+  data: {
+    labels: ["First semester","Second semester", "First Year"],
+    datasets: [{ 
+        data: [<%=sem_1_rank%>,<%=sem_2_rank%>,<%=year_1_rank%>],
+        label: "Rank",
+        borderColor: "#3e95cd",
+        fill: false },
+          
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Ranking based on First year , First semester and Second semester Total Marks'
+    },
+
+    scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+                 min:0
+                  // max:300
+                  
+                 
+                // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // // OR //
+                // beginAtZero: true   // minimum value will be 0.
+            },
+
+        }]
+    }
+  }
+});
+// HOrizontal Graph for sgpa
+new Chart(document.getElementById("sgpa-chart"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["FirstSem", "SecondSem"],
+      datasets: [
+        {
+          label: " Sgpa",
+          backgroundColor: ["rgba(60,186,159,0.8)","rgba(196,88,80, 0.8)"],
+          data: [<%= sem1_sgpa%>,<%= sem2_sgpa%>]
+        }
+      ]
+    },
+     options: {
+        legend: { display: false },
+        title: {
+        display: true,
+        text: 'Sgpa : First semester and Second semester'
+               },
+
+    scales: {
+        xAxes: [{
+            ticks: {
+                max: 10,
+                min: 0,
+                stepSize:0.5
+                
+            }
+        }]
+    }
+}
+
+});
+
+
+
+
+
+
+  
+// Donut CHART for first year total marks 
+
+new Chart(document.getElementById("first-year-total"), {
+    type: 'doughnut',
+    data: {
+      labels: [ "ObtainedMarks:<%=obt_marks%> ","RemainingMarks:<%=1800-obt_marks%>"],
+      datasets: [
+        {
+          label: "Marks",
+           backgroundColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 0.4)',
+
+            ],
+            borderColor: [
+             
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+               
+ 
+            ],
+          data: [<%=obt_marks%>, <%=1800-obt_marks%>]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'First year Total Obtained Marks (Out of 1800)'
+      }
+    }
+});
+
+// Donut CHART for second sem total marks 
+new Chart(document.getElementById("second-sem-total"), {
+    type: 'doughnut',
+    data: {
+      labels: [ "ObtainedMarks:<%=total_2_total_obt%>","RemainingMarks:<%=900- total_2_total_obt%>"],
+      datasets: [
+        {
+          label: "Marks",
+           backgroundColor: [
+               
+                'rgba(196,88,80, 1)',
+                'rgba(196,88,80,0.4)',
+
+            ],
+            borderColor: [
+             
+            'rgba(196,88,80, 1)',
+            'rgba(196,88,80, 1)',
+               
+ 
+            ],
+          data: [<%=total_2_total_obt%>,<%=900- total_2_total_obt%>]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Second Sem Total Obtained Marks (Out of 900)'
+      }
+    }
+});
+//############################# Donut CHART for first sem total marks #############################################
+
+new Chart(document.getElementById("first-sem-total"), {
+    type: 'doughnut',
+    data: {
+      labels: [ "ObtainedMarks:<%=total_1_total_obt%> ","RemainingMarks:<%=900-total_1_total_obt%>"],
+      datasets: [
+        {
+          label: "Marks",
+           backgroundColor: [
+               
+                'rgba(60,186,159,1)',
+                'rgba(60,186,159,0.4)',
+
+            ],
+            borderColor: [
+             
+            'rgba(60,186,159,1)',
+            'rgba(60,186,159,1)',
+               
+ 
+            ],
+          data: [<%=total_1_total_obt%>, <%=900-total_1_total_obt%>]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'First Sem Total Obtained Marks (Out of 900)'
+      }
+    }
+});
+new Chart(document.getElementById("ese-year"), {
+    type: 'bar',
+    data: {
+      labels: ["CF & DSUC", "DE & OS ", "PCUC & SAD ", "MATHS1 & MATHS2","PC & COA" ],
+      datasets: [
+        {
+          label: "FirstSem",
+          backgroundColor: "rgba(60,186,159,0.8)",
+          data: [<%= cf_ese_obt%>,<%= de_ese_obt%>,<%= pcuc_ese_obt%>,<%= maths1_ese_obt%>,<%= pc_ese_obt%>]
+        }, {
+          label: "SecondSem",
+          backgroundColor: "rgba(196,88,80, 0.8)",
+          data: [<%= ds_ese_obt%>,<%= os_ese_obt%>,<%= sad_ese_obt%>,<%= maths2_ese_obt%>,<%= coa_ese_obt%>]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Ese Marks : End Semester Exam (Out Of 60) '
+      }, 
+       scales: {
+        yAxes: [{
+            ticks: {
+                max: 60,
+                min: 0,
+                stepSize:5
+                
+            }
+        }]
+    }
+
+
+    }
+});
+
+new Chart(document.getElementById("cia-year"), {
+    type: 'bar',
+    data: {
+      labels: ["CF & DSUC", "DE & OS ", "PCUC & SAD ", "MATHS1 & MATHS2","PC & COA" ],
+      datasets: [
+        {
+          label: "FirstSem",
+          backgroundColor: "rgba(255, 159, 64, 0.8)",
+          data: [<%= cf_cia_obt%>,<%= de_cia_obt%>,<%= pcuc_cia_obt%>,<%= maths1_cia_obt%>,<%= pc_cia_obt%>]
+        }, {
+          label: "SecondSem",
+          backgroundColor: "rgba(153, 102, 255,0.8)",
+          data: [<%= ds_cia_obt%>,<%= os_cia_obt%>,<%= sad_cia_obt%>,<%= maths2_cia_obt%>,<%= coa_cia_obt%>]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Cia Marks : Continous Internal Exam (Out Of 40) '
+      }, 
+       scales: {
+        yAxes: [{
+            ticks: {
+                max: 40,
+                min: 0,
+                stepSize:5
+                
+            }
+        }]
+    }
+
+
+    }
+});
+
+// ##################      Row 1 subject marks  #######################################3
+new Chart(document.getElementById("cf"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks <%= cf_total_obt%> ", "RemainingMarks  <%= 100- cf_total_obt%> "],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(247, 183, 49,0.7)", "rgb(247, 183, 49,0.5)"],
+        data: [<%= cf_total_obt%>,100- <%= cf_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'BCA2101 Computer Fundamental '
+      }
+    }
+});
+new Chart(document.getElementById("de"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%= de_total_obt%>", "RemainingMarks:<%=100-de_total_obt%>"],
+      datasets: [{
+        label: "",
+        backgroundColor: ["rgb(45, 152, 218,0.7)", "rgb(45, 152, 218,0.5)"],
+        data: [<%= de_total_obt%>,100- <%= de_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'BCA2102 Digital Electronics '
+      }
+    }
+});
+new Chart(document.getElementById("pcuc"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%= pcuc_total_obt%> ", "RemainingMarks: <%=100-pcuc_total_obt%>"],
+      datasets: [{
+        label: "",
+        backgroundColor: ["rgb(252, 92, 101,0.7)", "rgb(252, 92, 101,0.5)"],
+        data: [<%= pcuc_total_obt%>, <%=100- pcuc_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'BCA2103 Programming Concept using C '
+      }
+    }
+});
+
+// ########################## Row 2 subject marks #########################
+new Chart(document.getElementById("maths1"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks :<%= maths1_total_obt%>", "RemainingMarks :<%=100- maths1_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(136, 84, 208,0.7)", "rgb(136, 84, 208,0.5)"],
+        data: [<%= maths1_total_obt%>, <%=100- maths1_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'BCA2104 Mathematics 1'
+      }
+    }
+});
+new Chart(document.getElementById("pc"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=pc_total_obt%>","RemainingMarks:<%=100- pc_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(179, 55, 113,0.7)", "rgb(179, 55, 113,0.5)"],
+        data: [<%=pc_total_obt%>, <%=100-pc_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'BCA2105 Professional Communication'
+      }
+    }
+});
+new Chart(document.getElementById("pcuc_lab"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=pcuc_lab_total_obt%>", "RemainingMarks:<%=100- pcuc_lab_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(234, 181, 67,0.7)", "rgb(234, 181, 67,0.5)"],
+        data: [<%=pcuc_lab_total_obt%>, <%=100- pcuc_lab_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: ' BCA 2151 C Programming Lab'
+      }
+    }
+});
+
+// ########################## Row 3 subject marks #########################
+new Chart(document.getElementById("de_lab"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=de_lab_total_obt%>", "RemainingMarks: <%=100-de_lab_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(44, 58, 71,0.7)", "rgb(44, 58, 71,0.5)"],
+        data: [<%=de_lab_total_obt%>, <%=100-de_lab_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Digital Electronics Lab'
+      }
+    }
+});
+new Chart(document.getElementById("stp_sem1"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=stp1_total_obt%>", "RemainingMarks: <%=100- stp1_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(249, 127, 81,0.7)", "rgb(249, 127, 81,0.5)"],
+        data: [<%=stp1_total_obt%>, <%=100- stp1_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Seminar Term Paper First Semester'
+      }
+    }
+});
+new Chart(document.getElementById("gp_sem1"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=gp1_total_obt%>", "RemainingMarks: <%=100- gp1_total_obt%>"],
+      datasets: [{
+        label: "  ",
+        backgroundColor: ["rgb(254, 164, 127,0.7)", "rgb(254, 164, 127,0.5)"],
+        data: [<%=gp1_total_obt%>, <%=100- gp1_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'GP (General Proficiency) First Semester'
+      }
+    }
+});
+
+// ########################## Row 4 subject marks #########################
+new Chart(document.getElementById("ds"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=ds_total_obt%>", "RemainingMarks:<%=100-ds_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(255, 242, 0, 0.7)", "rgb(255, 242, 0,0.5)"],
+        data: [<%=ds_total_obt%>, <%=100-ds_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Data Structure Using C'
+      }
+    }
+});
+new Chart(document.getElementById("os"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks: <%=os_total_obt%>", "RemainingMarks: <%=100- os_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(24, 220, 255,0.7)", "rgb(24, 220, 255,0.5)"],
+        data: [<%=os_total_obt%>, <%=100- os_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Operating System'
+      }
+    }
+});
+new Chart(document.getElementById("sad"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=sad_total_obt%>", "RemainingMarks: <%=100- sad_total_obt%>"],
+      datasets: [{
+        label: "",
+        backgroundColor: ["rgb(255, 77, 77,0.7)", "rgb(255, 77, 77,0.5)"],
+        data: [<%=sad_total_obt%>, <%=100- sad_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'System Analysis & Design '
+      }
+    }
+});
+
+// ########################## Row 5 subject marks #########################
+new Chart(document.getElementById("maths2"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=maths2_total_obt%>", "RemainingMarks:<%=100- maths2_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(50, 255, 126,0.7)", "rgb(50, 255, 126,0.5)"],
+        data: [<%=maths2_total_obt%>, <%=100- maths2_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Mathematics 2'
+      }
+    }
+});
+new Chart(document.getElementById("coa"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=coa_total_obt%>", "RemainingMarks:<%=100- coa_total_obt%>"],
+      datasets: [{
+        label: "",
+        backgroundColor: ["rgb(123, 237, 159,0.7)", "rgb(123, 237, 159,0.5)"],
+        data: [<%=coa_total_obt%>, <%=100- coa_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Organization & Architecture '
+      }
+    }
+});
+new Chart(document.getElementById("coa_lab"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=coa_lab_total_obt%>", "RemainingMarks: <%= 100- coa_lab_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(55, 66, 250,0.7)", "rgb(55, 66, 250,0.5)"],
+        data: [<%=coa_lab_total_obt%>, <%= 100- coa_lab_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Computer Organization & Architecture Lab'
+      }
+    }
+});
+
+// ########################## Row 6 subject marks #########################
+new Chart(document.getElementById("ds_lab"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=ds_lab_total_obt%>", "RemainingMarks:<%= 100- ds_lab_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(255, 165, 2,0.7)", "rgb(255, 165, 2,0.5)"],
+        data: [<%=ds_lab_total_obt%>, <%= 100- ds_lab_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Data Structure using c Lab'
+      }
+    }
+});
+new Chart(document.getElementById("stp_sem2"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=stp2_total_obt%>", "RemainingMarks: <%=100- stp2_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(255, 107, 129,0.7)", "rgb(255, 107, 129,0.5)"],
+        data: [<%=stp2_total_obt%>, <%=100- stp2_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Seminar Term Paper Second Semester'
+      }
+    }
+});
+new Chart(document.getElementById("gp_sem2"), {
+    type: 'pie',
+    data: {
+      labels: ["ObtainedMarks:<%=gp2_total_obt%>", "RemainingMarks:<%=100 - gp2_total_obt%>"],
+      datasets: [{
+        label: " ",
+        backgroundColor: ["rgb(255, 165, 2,0.7)", "rgb(255, 165, 2,0.5)"],
+        data: [<%=gp2_total_obt%>, <%=100 - gp2_total_obt%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'GP (General Proficiency) Second Semester'
+      }
+    }
+});
+
+
+
+
+
+} //end of on load function 
+
+
+
+
+
+
+
+
+
+
+    
+  </script> 
+  <!--chart configurationends here -->
+      
+
+    <p class="del-res"><b> Do you Want to Get your Results Deleted From This Website ?
+  	 <br> Mail Me <a href="mailto:aksdumpy@gmail.com"><i class="fa fa-envelope"></i></a></b></p>
+   
+  </body>
+</html>
