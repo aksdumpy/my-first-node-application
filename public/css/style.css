@@ -8,6 +8,13 @@ body {
     height: 100vh;
 }
 
+.row a{
+    color:black!important;
+    font-weight:bolder!important;
+    word-spacing:4px!important;
+    font-size: 20px!important
+}
+
 blockquote {
   margin: 0 auto;
   padding: 1em;
@@ -34,13 +41,22 @@ blockquote footer {
     font-weight: 200;
 }
 .jumbotron{
-   margin-top: 20px!important;
+   margin-top:40px!important;
   margin-bottom: 50px!important;
  box-shadow: 10px 10px 8px black;
   background-color:rgba(258,275,195,0.5)!important;
-  border:1px solid black !important;
+  border:3px solid black !important;
+ 
 
 }
+.jumbotron:hover{
+    
+  box-shadow: 15px 15px 10px black;  
+  margin-bottom: 70px!important; 
+    
+}
+
+
  /*css for invidual chart sizing */
  
  canvas{
@@ -109,6 +125,19 @@ text-align: center;
     font-weight: bold;
   font-size: 25px;
   
+}
+li{
+font-size: large;
+font-family: inherit;
+margin-left: 0px;
+}
+.subject-headings{
+
+text-decoration: underline;
+font-style:italic; 
+font-size:18px;
+letter-spacing: 3px;
+font-weight: bolder;
 }
 
 
