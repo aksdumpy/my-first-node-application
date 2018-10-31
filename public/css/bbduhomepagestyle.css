@@ -78,6 +78,13 @@ background-color: transparent!important;
      font-family: Times, Times New ;
      text-align: right;
   }
+  
+   .headings
+{background:inherit;
+text-align: center;
+ font-size: 30px;
+ font-weight:lighter;
+}
   .box2{
       background:rgba(211,211,211,0.3);
   height: auto;

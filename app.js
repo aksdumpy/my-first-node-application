@@ -47,7 +47,7 @@ app.post("/bbdures",function( req,res){
 var q="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no;
 var q1="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no+ " AND mother_name LIKE \'"+mother_name+"\'AND name LIKE\'"+student_name+"%\'" ;
 connection.query(q,function(err,results){
-// if (err) throw err;
+
 if (err) res.send("Database closed ");
 
 if (typeof results[0]!=='undefined')
@@ -59,8 +59,7 @@ res.render("individualstudentbca2017",results[0]);
 else
   {
 res.redirect("/resnotfound");
-// res.render("bbduhomepage");
-// res.render("bbduhomepage",{resnotfound:"resnotfound"});
+
 
    }
 });
@@ -81,7 +80,6 @@ app.get("/resultanalysis", function(req, res) {
 
 app.get("/*",function(req,res){
     
-    // res.send("he");
     res.redirect("/bbdu");
 });
 

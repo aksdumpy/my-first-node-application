@@ -68,7 +68,7 @@
         <footer>Michael Jordan </footer>
         </blockquote>
          <% } %>
-         
+  
          
          
               <!--Row for student details -->
@@ -81,10 +81,19 @@
        <div class="stud-details  "> <span class="stud-info"> Mother Name :</span> <%= mother_name%> </div>
        <div class="stud-details  "> <span class="stud-info"> 	Branch:</span> <%=branch%> </div>
 
-      </div>
+      </div >
       <!-- end of Student details  -->
         
-         
+         <div class="note">
+           <ul><i> <b> Note:  </b> </i>
+             <li> <i> <b> Click or Hover over Graphs to See appropriate Numbers </b> </i></li>
+             <li> <i> <b> Graphs Are best Available For Google Chrome Browser </b> </i></li>
+             <li> <i> <b> In case of Google Chrome Mobile app use Auto Rotate and View Website in Landscape Mode</b> </i></li>
+             </li>
+           </ul>
+        </div>
+        
+        
        </div>  <!--// jumbotronends here -->
    
        
@@ -100,8 +109,11 @@
       <!--Row for information of rank and rank and sgpa -->
       <div class="row pink ">
       <h1> <b> <div class="headings">Rank And SGPA Charts</div> </b></h1>
-      <div class="col-lg-6 col-md-6 col-sm-6 pink "><canvas id="rank-chart" width="800" height="450"></canvas> </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-6 pink "> <div class"headings"><b>Ranking Based on Total Marks</b> </div>
+      <canvas id="rank-chart" width="800" height="450"></canvas> </div>
       <div class="col-lg-6 col-md-6 col-sm-6 pink "><canvas id="sgpa-chart" width="800" height="450"></canvas> </div>
+      
       </div>
 
 
@@ -244,15 +256,15 @@ new Chart(document.getElementById("rank-chart"), {
   options: {
     title: {
       display: true,
-      text: 'Ranking based on First year , First semester and Second semester Total Marks'
+      text: 'Rank First Year :<%=year_1_rank%>    First Semester :<%=sem_1_rank%>  Second Semester :<%=sem_2_rank%>'
     },
 
     scales: {
         yAxes: [{
             display: true,
             ticks: {
-                 min:0
-                  // max:300
+                 min:1
+                // max:300
                   
                  
                 // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
