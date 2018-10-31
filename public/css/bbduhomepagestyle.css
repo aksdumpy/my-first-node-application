@@ -11,7 +11,8 @@ body{
 	font-size: 20px;
 	overflow-x: hidden;
 	color: black;
-	font-family: 'Flamenco', cursive;
+	font-family: 'Roboto Condensed', sans-serif;
+
 
 
 }
@@ -28,7 +29,7 @@ box-shadow: 8px 9px 7px black;
 
 }
 .main-heading{
-  font-family: Optima, sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   letter-spacing:5px;
   font-weight: bolder;
@@ -95,6 +96,7 @@ text-align: center;
   padding:0px 20px 5px 20px;
 border: black 4px solid; 
 box-shadow: 8px 9px 7px black;
+	font-family: 'Flamenco', cursive;!important
 }
 .box2 a{
   text-decoration: none;

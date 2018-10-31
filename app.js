@@ -44,8 +44,8 @@ app.post("/bbdures",function( req,res){
     var mother_name= req.body.mother_name;
     var student_name= req.body.student_name;
     //   console.log(mother_name);
-var q="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no;
-var q1="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no+ " AND mother_name LIKE \'"+mother_name+"\'AND name LIKE\'"+student_name+"%\'" ;
+//var q1="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no;
+var q="SELECT * FROM bca2017 WHERE university_roll_number="+roll_no+ " AND mother_name LIKE \'"+mother_name+"\'AND name LIKE\'"+student_name+"%\'" ;
 connection.query(q,function(err,results){
 
 if (err) res.send("Database closed ");
