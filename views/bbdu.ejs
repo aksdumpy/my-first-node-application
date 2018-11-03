@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
 
       <body>
@@ -23,17 +24,18 @@
          
      
        <h1>Enter Student Details </h1>
-      <form class="form-horizontal "  action="/bbdures" method="POST">
+   
+      <form class="form-horizontal"  id= "roll-no-form"   action="/bbdures" method="POST">
 
       <p>Enter University Roll Number :</p>
       
-      <input type="number" name="roll_no" class="form-control" placeholder="10 Digit Roll Number">
+      <input type="number" name="roll_no" id="roll_no" class="form-control" placeholder="10 Digit Roll Number" size="11" min="0" required>
       <p>Enter Student Name : </p>
-      <input type="text" name="student_name"class="form-control" placeholder="Full Student Name">
+      <input type="text" name="student_name"class="form-control"id="student_name" placeholder="Full Student Name" size="20" required onkeyup="lettersOnly(this)" >
 
       <p>Enter Mother Name : </p>
-      <input type="text" name="mother_name"class="form-control" placeholder="Full Mother Name">
-
+      <input type="text" name="mother_name" id="mother_name" class="form-control" placeholder="Full Mother Name" size="20" required onkeyup="lettersOnly(this)"  >
+       <div class="g-recaptcha" data-sitekey="6LcWd3gUAAAAACNII7HXDKKDYj0xVoOPmUa3sjKB"></div>
       <button type="text" class="btn btn-primary mb-2">Show Result</button>
       <p> <a href="/resultanalysis">Have a Look At Complete BCA-2017-First-Year-Analysis (Currently BCA 2nd Year)  </a>  </p>
         
@@ -56,4 +58,13 @@
     
 </div>       <!-- Ending container class-->
 </body>
+ 
+<script>
+function lettersOnly(input) {
+    var regex = /[^a-zA-Z_ ]/gi;
+    input.value = input.value.replace(regex, "");
+} // not allow to Enter any absurd Values 
+document.addEventListener('contextmenu', event => event.preventDefault()); //stopping right click 
+
+</script>
 </html>
